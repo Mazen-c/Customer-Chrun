@@ -1,0 +1,7 @@
+artifact_location: file:///d:/Projects/Customer Chrun/mlruns/356638384849613480
+creation_time: 1774485245298
+experiment_id: '356638384849613480'
+last_update_time: 1774485245298
+lifecycle_stage: active
+name: Telco Churn - XGBoost
+workspace: default

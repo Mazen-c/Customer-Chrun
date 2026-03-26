@@ -1,0 +1,14 @@
+artifact_uri: file:///d:/Projects/Customer Chrun/mlruns/356638384849613480/4532222b06594445af100a843bc47b4d/artifacts
+end_time: 1774485253102
+entry_point_name: ''
+experiment_id: '356638384849613480'
+lifecycle_stage: active
+run_id: 4532222b06594445af100a843bc47b4d
+run_name: blushing-crane-865
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1774485245507
+status: 3
+tags: []
+user_id: pc
