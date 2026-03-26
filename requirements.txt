@@ -13,3 +13,4 @@ seaborn==0.13.2
 optuna==4.8.0
 lightgbm==4.6.0
 statsmodels==0.14.6
+great_expectations==0.18.19
