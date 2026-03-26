@@ -27,10 +27,11 @@ Production Deployment:
 import os
 import pandas as pd
 import mlflow
+import joblib
 
 # === MODEL LOADING CONFIGURATION ===
 # IMPORTANT: This path is set during Docker container build
-# In development: uses local MLflow artifacts
+# In development: uses local model
 # In production: uses model copied to container at build time
 MODEL_DIR = "/app/model"
 
@@ -41,19 +42,14 @@ try:
     print(f"✅ Model loaded successfully from {MODEL_DIR}")
 except Exception as e:
     print(f"❌ Failed to load model from {MODEL_DIR}: {e}")
-    # Fallback for local development (OPTIONAL)
+    # Fallback for local development
     try:
-        # Try loading from local MLflow tracking
-        import glob
-        local_model_paths = glob.glob("./mlruns/*/*/artifacts/model")
-        if local_model_paths:
-            latest_model = max(local_model_paths, key=os.path.getmtime)
-            model = mlflow.pyfunc.load_model(latest_model)
-            MODEL_DIR = latest_model
-            print(f"✅ Fallback: Loaded model from {latest_model}")
-        else:
-            raise Exception("No model found in local mlruns")
+        model = joblib.load("model.pkl")
+        MODEL_DIR = "."
+        print("✅ Fallback: Loaded model from model.pkl")
     except Exception as fallback_error:
+        print(f"❌ Fallback failed: {fallback_error}")
+        raise Exception(f"Failed to load model: {e}. Fallback failed: {fallback_error}")
         raise Exception(f"Failed to load model: {e}. Fallback failed: {fallback_error}")
 
 # === FEATURE SCHEMA LOADING ===

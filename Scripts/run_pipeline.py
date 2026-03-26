@@ -37,7 +37,7 @@ def main(args):
     # === MLflow Setup - ESSENTIAL for experiment tracking ===
     # Configure MLflow to use local file-based tracking (not a tracking server)
     project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-    mlruns_path = args.mlflow_uri or f"file://{project_root}/mlruns"  # Local file-based tracking
+    mlruns_path = args.mlflow_uri or f"file:///{project_root}/mlruns"  # Local file-based tracking
     mlflow.set_tracking_uri(mlruns_path)
     mlflow.set_experiment(args.experiment)  # Creates experiment if doesn't exist
 
@@ -104,6 +104,9 @@ def main(args):
         # Save locally for development serving
         with open(os.path.join(artifacts_dir, "feature_columns.json"), "w") as f:
             json.dump(feature_cols, f)
+
+        with open("feature_columns.txt", "w") as f:
+            f.write("\n".join(feature_cols))
 
         # Log to MLflow for production serving
         mlflow.log_text("\n".join(feature_cols), artifact_file="feature_columns.txt")
@@ -198,7 +201,9 @@ def main(args):
         print(f"🎯 Model Performance:")
         print(f"   Precision: {precision:.3f} | Recall: {recall:.3f}")
         print(f"   F1 Score: {f1:.3f} | ROC AUC: {roc_auc:.3f}")
-
+        # === SAVE MODEL LOCALLY ===
+        joblib.dump(model, "model.pkl")
+        print("💾 Model saved locally as model.pkl")
         # === STAGE 7: Model Serialization and Logging ===
         print("💾 Saving model to MLflow...")
         # ESSENTIAL: Log model in MLflow's standard format for serving
