@@ -1,0 +1,10 @@
+artifact_location: file:///d:/Projects/Customer Chrun/mlruns/356638384849613480/models/m-02fee024fcc541a0a1e20b91046ead84/artifacts
+creation_timestamp: 1774485245862
+experiment_id: '356638384849613480'
+last_updated_timestamp: 1774485253081
+model_id: m-02fee024fcc541a0a1e20b91046ead84
+model_type: null
+name: model
+source_run_id: 4532222b06594445af100a843bc47b4d
+status: 2
+status_message: null

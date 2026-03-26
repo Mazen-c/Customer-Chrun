@@ -1,0 +1,14 @@
+artifact_uri: file:///d:/Projects/Customer Chrun/mlruns/356638384849613480/1317750b5ac9499a9767fdb807be494f/artifacts
+end_time: 1774485262664
+entry_point_name: ''
+experiment_id: '356638384849613480'
+lifecycle_stage: active
+run_id: 1317750b5ac9499a9767fdb807be494f
+run_name: carefree-cod-482
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1774485257699
+status: 3
+tags: []
+user_id: pc

@@ -1,0 +1,14 @@
+artifact_uri: file:///D:/Projects/Customer Chrun/mlruns/968343878456273593/2edf44276c4f4c348d3ea6fa46c1d935/artifacts
+end_time: 1774486094333
+entry_point_name: ''
+experiment_id: '968343878456273593'
+lifecycle_stage: active
+run_id: 2edf44276c4f4c348d3ea6fa46c1d935
+run_name: beautiful-seal-88
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1774486087477
+status: 3
+tags: []
+user_id: pc

@@ -1,0 +1,15 @@
+pandas==2.3.3
+mlflow==3.10.1
+scikit-learn==1.8.0
+xgboost==3.2.0
+fastapi==0.135.2
+gradio==5.20.0
+pydantic==2.12.5
+uvicorn==0.42.0
+joblib==1.5.3
+numpy==2.4.1
+matplotlib==3.10.8
+seaborn==0.13.2
+optuna==4.8.0
+lightgbm==4.6.0
+statsmodels==0.14.6
